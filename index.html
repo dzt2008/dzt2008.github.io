@@ -10,7 +10,7 @@
   
 
   
-  <script>window.icon_font = '4552607_tq6stt6tcg';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  <script>window.icon_font = '4552607_tq6stt6tcg';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};</script>
   
   
   <title>
@@ -67,9 +67,6 @@
       }).init();
     </script>
   
-  
-    <script src="/sw.js"></script>
-  
 <meta name="generator" content="Hexo 7.2.0"></head>
 
   <body>
@@ -117,6 +114,7 @@
 <div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
 </div>
 
+
     <div id="container">
       <div id="wrap">
         <div id="header-nav">
@@ -124,7 +122,7 @@
     
       <span class="main-nav-link-wrap">
         <span class="main-nav-icon"></span>
-        <a class="main-nav-link" href="/home">首页</a>
+        <a class="main-nav-link" href="/">首页</a>
       </span>
     
       <span class="main-nav-link-wrap">
@@ -196,7 +194,7 @@
       
         
         
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="QQ开放平台接入koishi教程（2024）" class="lazyload">
+          <img data-src="https://d-sketon.top/img/backimg/bg1.jpg" data-sizes="auto" alt="QQ开放平台接入koishi教程（2024）" class="lazyload">
         
       
     </div>
@@ -234,7 +232,7 @@ QQ开放平台账号
       
         
         
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="第一篇博客（C/C++）" class="lazyload">
+          <img data-src="https://d-sketon.top/img/backimg/bg1.jpg" data-sizes="auto" alt="第一篇博客（C/C++）" class="lazyload">
         
       
     </div>
@@ -286,7 +284,7 @@ QQ开放平台账号
       
         
         
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="hexo搭建教程（GitHub）2024" class="lazyload">
+          <img data-src="https://d-sketon.top/img/backimg/bg1.jpg" data-sizes="auto" alt="hexo搭建教程（GitHub）2024" class="lazyload">
         
       
     </div>
@@ -319,7 +317,7 @@ QQ开放平台账号
       
         
         
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="hello（测试）" class="lazyload">
+          <img data-src="https://d-sketon.top/img/backimg/bg1.jpg" data-sizes="auto" alt="hello（测试）" class="lazyload">
         
       
     </div>
@@ -369,19 +367,11 @@ QQ开放平台账号
 </div>
 <div class="sidebar-social">
   
-    <div class="icon-email sidebar-social-icon">
-      <a href=mailto:dzt20081208@outlook.com itemprop="url" target="_blank" aria-label="email"></a>
-    </div>
-  
-    <div class="icon-github sidebar-social-icon">
-      <a href=https://github.com/dzt2008 itemprop="url" target="_blank" aria-label="github"></a>
-    </div>
-  
 </div>
 <div class="sidebar-menu">
   
     <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/home" aria-label="首页"></a>
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
       <span class="sidebar-menu-icon"></span>
       <div class="sidebar-menu-link">首页</div>
     </div>
@@ -420,7 +410,7 @@ QQ开放平台账号
     <div class="footer-line"></div>
   </div>
   <div class="outer">
-    <div id="footer-info" class="inner">
+    <div id="footer-info">
       
       <div>
         <span class="icon-copyright"></span>
@@ -486,19 +476,11 @@ QQ开放平台账号
 </div>
 <div class="sidebar-social">
   
-    <div class="icon-email sidebar-social-icon">
-      <a href=mailto:dzt20081208@outlook.com itemprop="url" target="_blank" aria-label="email"></a>
-    </div>
-  
-    <div class="icon-github sidebar-social-icon">
-      <a href=https://github.com/dzt2008 itemprop="url" target="_blank" aria-label="github"></a>
-    </div>
-  
 </div>
 <div class="sidebar-menu">
   
     <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/home" aria-label="首页"></a>
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
       <span class="sidebar-menu-icon"></span>
       <div class="sidebar-menu-link">首页</div>
     </div>
@@ -532,15 +514,15 @@ QQ开放平台账号
     <div class="site-search">
       <div class="reimu-popup popup">
         <div class="reimu-search">
-          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input-icon"></div>
           <div class="reimu-search-input" id="reimu-search-input"></div>
+          <div class="popup-btn-close"></div>
         </div>
         <div class="reimu-results">
           <div id="reimu-stats"></div>
           <div id="reimu-hits"></div>
           <div id="reimu-pagination" class="reimu-pagination"></div>
         </div>
-        <span class="popup-btn-close"></span>
       </div>
     </div>
     
@@ -613,6 +595,19 @@ QQ开放平台账号
 
 
 
+
+  
+<script src="https://npm.webcache.cn/quicklink@2.3.0/dist/quicklink.umd.js"></script>
+
+  <script data-pjax>
+    quicklink.listen({
+      timeout: 3000,
+      priority: true,
+      ignores: []
+    });
+  </script>
+
+
 <div id="lazy-script">
   <div>
     
@@ -629,14 +624,27 @@ QQ开放平台账号
   \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
                                                   
 `,'color: #ff5252;')
-    console.log('%c Theme.Reimu v' + '0.2.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.3' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
   </script>
   
+
 
 
   
 <script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
 
+
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
 
   <!-- hexo injector body_end start -->
 <script src="/js/insert_highlight.js" data-pjax></script>
