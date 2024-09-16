@@ -54,7 +54,11 @@
   });
   // Simple Selector
   window._$ = (selector) => {
-    if (selector.startsWith("#") && !selector.includes(' ')) {
+    if (
+      selector.startsWith("#") &&
+      !selector.includes(" ") &&
+      !selector.includes(".")
+    ) {
       return document.getElementById(selector.slice(1));
     }
     return document.querySelector(selector);
@@ -104,7 +108,7 @@
     });
 
   let oldScrollTop = 0;
-  window.addEventListener("scroll", () => {
+  document.addEventListener("scroll", () => {
     let scrollTop =
       document.documentElement.scrollTop || document.body.scrollTop;
     const diffY = scrollTop - oldScrollTop;
@@ -115,7 +119,7 @@
         .getElementById("header-nav")
         .classList.remove("header-nav-hidden");
     } else {
-      document.getElementById("header-nav").classList.add("header-nav-hidden");
+      _$("#header-nav").classList.add("header-nav-hidden");
     }
   });
 })();

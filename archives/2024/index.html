@@ -186,6 +186,10 @@
   <div class="tag-wrap">
     
       <div class="archives-tag-list-item">
+        <a class="archives-tag-list-link" href="/tags/koishi教程/">koishi教程</a>
+      </div>
+    
+      <div class="archives-tag-list-item">
         <a class="archives-tag-list-link" href="/tags/你好/">你好</a>
       </div>
     
@@ -195,10 +199,6 @@
     
       <div class="archives-tag-list-item">
         <a class="archives-tag-list-link" href="/tags/介绍/">介绍</a>
-      </div>
-    
-      <div class="archives-tag-list-item">
-        <a class="archives-tag-list-link" href="/tags/koishi教程/">koishi教程</a>
       </div>
     
   </div>
@@ -546,6 +546,71 @@
     firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
   </script>
 
+
+
+  
+<script src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js"></script>
+
+  <script>
+    function loadScripts(scripts, index) {
+      if (index < scripts.length) {
+        const script = scripts[index];
+        const src = script.getAttribute('src');
+
+        if (src) {
+          fetch(src)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+              }
+              return response.text();
+            })
+            .then(scriptContent => {
+              const scriptElement = document.createElement('script');
+              scriptElement.text = scriptContent;
+              document.head.appendChild(scriptElement);
+              loadScripts(scripts, index + 1);
+            })
+            .catch(error => {
+              console.error('Failed to load script:', src, error);
+            });
+        } else {
+          // Inline script, directly evaluate
+          eval(script.textContent);
+          loadScripts(scripts, index + 1);
+        }
+      }
+    }
+    new Pjax({
+      selectors: [
+        "#header-title",
+        "#subtitle-wrap",
+        "#content",
+        '#mobile-nav',
+        '#lazy-script'
+      ],
+      switches: {
+        "#header-title": Pjax.switches.outerHTML,
+        "#subtitle-wrap": Pjax.switches.outerHTML,
+        "#content": function(oldEl, newEl, options) {
+          const scripts = [...newEl.querySelectorAll('script')];
+          loadScripts(scripts, 0);
+          oldEl.outerHTML = newEl.outerHTML
+          this.onSwitch()
+        },
+        "#mobile-nav": Pjax.switches.outerHTML,
+        '#lazy-script': function(oldEl, newEl, options) {
+          const scripts = [...newEl.querySelectorAll('script')];
+          loadScripts(scripts, 0);
+          oldEl.innerHTML = newEl.innerHTML
+          this.onSwitch()
+        },
+      },
+      cacheBust: false
+    })
+  </script>
+  
+<script src="/js/pjax.js"></script>
 
 
 
