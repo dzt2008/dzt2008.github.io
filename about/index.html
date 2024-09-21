@@ -216,8 +216,18 @@
     <p><strong>本文版权：</strong>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><span class="icon-creative-commons"></span>BY-NC-SA</a> 许可协议。转载请注明出处！</p>
   </blockquote>
       
+        <a href="/about/index.html#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/about/" itemprop="commentCount"></span>
+          留言
+        </a>
       
       
+      
+      
+        <span id="/about/" class="leancloud_visitors article-visitor-link" data-flag-title="关于">
+          <span class="leancloud-visitors-count">0</span>
+          <em class="post-meta-item-text">阅读量</em>
+        </span>
       
       
       
@@ -229,6 +239,8 @@
 
   
 </article>
+
+  <section id="comments" class="vcomment"></section>
 
 
 
@@ -321,10 +333,10 @@
       
         <div>
           <span class="icon-brush"></span>
-          5.2k
+          5.5k
           &nbsp;|&nbsp;
           <span class="icon-coffee"></span>
-          00:18
+          00:19
         </div>
       
       
@@ -462,6 +474,34 @@
   }
 </script>
 
+
+  
+<script src="https://npm.webcache.cn/valine@1.5.1/dist/Valine.min.js" data-pjax></script>
+
+  <script data-pjax>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter((item) => {
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    var recordIP = JSON.parse('true');
+    var highlight = JSON.parse('true');
+    var visitor = JSON.parse('true');
+
+    new Valine({
+      el: '.vcomment',
+      appId: "sdPFnQIrBmmksXgLftO3oGf2-gzGzoHsz",
+      appKey: "6iFpMZtLvMwz19QBUP1B8OSf",
+      placeholder: "留下你的评论！",
+      pageSize: '10',
+      avatar: 'mp',
+      lang: 'zh-cn',
+      recordIP: recordIP,
+      highlight: highlight,
+      visitor: visitor,
+      requiredFields: guest_info,
+      path: window.location.pathname
+    });
+  </script>
 
 
 
